@@ -14,14 +14,15 @@ def find_stationary_distribution(a, b, q):
     eigenvalues, eigenvectors = np.linalg.eig(P_transpose)
     stationary_distribution = eigenvectors[:, np.isclose(eigenvalues, 1)]
     stationary_distribution /= stationary_distribution.sum()
+    print(P @ P @ P @ P @ P @ P @ P)
 
     return stationary_distribution.flatten()
 
 
 # Example usage with a = 0.5, b = 0.3, and q = 0.2
-a_value = 0.5
-b_value = 0.3
-q_value = 0.2
+a_value = 1
+b_value = 1
+q_value = 0
 
 stationary_distribution = find_stationary_distribution(a_value, b_value, q_value)
 print("Stationary Distribution:", stationary_distribution)
